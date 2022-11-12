@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "acme>=0.29.0",
+    "certbot>=0.34.0",
+    "requests",
+    "beautifulsoup4>=4.11.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "certbot-dns-onedotcom"
+version = "1.0.0"
+authors = [
+  { name="Njål Brekke", email="njal@myon.no" },
+]
+description = "One.com DNS Authenticator plugin for Certbot"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache License",
+    "Operating System :: OS Independent",
+]
+[project.entry-points."certbot.plugins"]
+dns-onedotcom = "certbot_dns_onedotcom.dns_onedotcom:Authenticator"
+
+[project.urls]
+"Homepage" = "https://github.com/elenhinan/certbot-onedotcom"
+"Bug Tracker" = "https://github.com/elenhinan/certbot-onedotcom/issues"
